@@ -10,12 +10,12 @@ export function getImgUnsplash() {
     });
 
     return fetch(request).then(response => {
-        if(response.status >= 200 && response.status < 300){          
-            return response.json();					
+        if(response.status >= 200 && response.status < 300){
+            return response.json();
             } else {
                 response.json().then(errData => {
                     console.error(errData);
-                    throw new Error('Something went wrong! - server-side');		
+                    throw new Error('Something went wrong! - server-side');
                 });
             }
         }).catch(error =>{

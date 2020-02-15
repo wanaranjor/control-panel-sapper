@@ -18,8 +18,6 @@
     //   }
     // });
 
-
-
   firebase.firestore().collection("customers")
     .doc(customerId)
     .delete().then(() => {
@@ -28,6 +26,7 @@
       console.error("Error removing document: ", error);
     });
   }
+
 </script>
 
 <div class="w-full md:w-1/2 xl:w-1/3 p-3">

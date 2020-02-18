@@ -38,8 +38,8 @@
 	<title>{customerData.name}</title>
 </svelte:head>
 
-<div class="flex mx-auto pt-20 w-full">
-  <div class="w-full md:w-1/4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+<div class="flex mx-auto pt-20 w-full px-4">
+  <div class="w-full md:w-1/4 md:px-0 md:mt-8 mb-3 text-gray-800 leading-normal">
     <div class="flex-col justify-between items-center">
       <div class="flex flex-wrap">
           <div class="w-full py-3">

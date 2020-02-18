@@ -31,7 +31,7 @@
 	<title>WANR - Home</title>
 </svelte:head>
 
-<div class="container flex mx-auto pt-20 w-full">
+<div class="flex mx-auto pt-20 w-full px-4">
   <div class="w-full md:w-1/4 px-4 py-3 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
     <CreateCustomer />
   </div>

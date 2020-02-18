@@ -14,7 +14,7 @@
 <Navbar />
 {/if}
 
-<main class="flex-grow mx-auto w-full">
+<main class="flex-grow mx-auto w-full bg-gray-100">
 	<slot></slot>
 </main>
 

@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import { isEmpty } from "../../helpers/validations";
 	import { isNotZero } from "../../helpers/validations";
 	import { currentCustomerId } from '../../stores/customer'
@@ -44,9 +45,9 @@
 </script>
 
 {#if $currentProjectId && $currentProjectId}
-<div class="flex flex-wrap">
+<div class="flex flex-wrap" transition:fade>
 	<div class="w-full py-3">
-		<div class="border rounded p-2">
+		<div class="bg-white border rounded p-2">
 			<h3 class="pt-3 text-lg text-center font-semibold">Create Dedications</h3>
 			<form on:submit|preventDefault={submitForm} novalidate class="px-4 pt-3 pb-3 rounded">
 				<div class="mb-4">

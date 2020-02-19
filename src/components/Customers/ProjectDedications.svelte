@@ -1,6 +1,7 @@
 <script>
   import { beforeUpdate } from 'svelte';
   import { onDestroy } from 'svelte';
+  import moment from 'moment';
   import { currentCustomerId } from '../../stores/customer';
   import { currentProjectId } from '../../stores/project';
   import CreateDedication from '../Customers/CreateDedication.svelte';
@@ -22,7 +23,7 @@
       .doc($currentCustomerId)
       .collection('projects')
       .doc(currentProjectIdDedications)
-      .collection('dedications').orderBy("date", "asc");
+      .collection('dedications').orderBy("date", "desc");
 
     return observerDedications = query.onSnapshot(querySnapshot =>{
       dedicationsData = querySnapshot.docs;
@@ -42,7 +43,21 @@
     }
   });
 
+  function convertDate(fecha){
+      // let date = moment(dateDedication).format('DD/MM/YYYY, h:mm:ss a');
+      // console.log(date, '-', dateDedication);
+   
+      
+      console.log(fecha);
+      return;
+    }
 </script>
+<style>
+/* TODO: verificar por que no aplica pre-wrap desde tailwindcss */
+  .whitespace-pre-wrap {
+    white-space: pre-wrap;
+  }
+</style>
 
 <div class="flex flex-wrap">
   <div class="w-full">
@@ -51,13 +66,16 @@
         <table class="w-full leading-normal">
           <thead>
             <tr>
-              <th class="px-5 py-3 border-gray-100 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <th class="px-5 py-3 border-gray-100 bg-gray-100 text-xs font-semibold text-gray-600 uppercase tracking-wider">
                 Date
               </th>
-              <th class="px-5 py-3 border-gray-100 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <th class="px-5 py-3 border-gray-100 bg-gray-100 text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                Time
+              </th>
+              <th class="px-5 py-3 border-gray-100 bg-gray-100 text-xs font-semibold text-gray-600 uppercase tracking-wider">
                 Hours
               </th>
-              <th class="px-5 py-3 border-gray-100 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <th class="px-5 py-3 border-gray-100 bg-gray-100 text-xs font-semibold text-gray-600 uppercase tracking-wider">
                 Activity
               </th>
               <th class="px-5 py-3 border-gray-100 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -68,9 +86,14 @@
           <tbody>
             {#each dedicationsData as dedication}
               <tr>
-                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
                   <p class="text-gray-900 whitespace-no-wrap">
-                    {dedication.data().date}
+                    {moment.unix(dedication.data().date.seconds).format('DD/MM/YYYY')}
+                  </p>
+                </td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    {moment.unix(dedication.data().date.seconds).format('hh:mm a')}
                   </p>
                 </td>
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
@@ -79,12 +102,12 @@
                   </p>
                 </td>
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
+                  <p class="text-gray-900 whitespace-pre-wrap">
                     {dedication.data().activity}
                   </p>
                 </td>
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
+                  <p class="text-gray-900 whitespace-pre-wrap">
                     {dedication.data().comments}
                   </p>
                 </td>

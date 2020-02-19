@@ -16,6 +16,7 @@
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.0.5",
     "compression": "^1.7.1",
+    "moment": "^2.24.0",
     "polka": "next",
     "sirv": "^0.4.0",
     "sweetalert2": "^9.7.2"
@@ -38,6 +39,6 @@
     "rollup-plugin-terser": "^5.2.0",
     "sapper": "^0.27.0",
     "svelte": "^3.0.0",
-    "tailwindcss": "^1.1.4"
+    "tailwindcss": "^1.2.0"
   }
 }

@@ -52,12 +52,6 @@
       return;
     }
 </script>
-<style>
-/* TODO: verificar por que no aplica pre-wrap desde tailwindcss */
-  .whitespace-pre-wrap {
-    white-space: pre-wrap;
-  }
-</style>
 
 <div class="flex flex-wrap">
   <div class="w-full">

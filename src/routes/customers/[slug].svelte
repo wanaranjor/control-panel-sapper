@@ -39,7 +39,7 @@
 </svelte:head>
 
 <div class="flex mx-auto pt-20 w-full px-4">
-  <div class="w-full md:w-1/4 md:px-0 md:mt-8 mb-3 text-gray-800 leading-normal">
+  <div class="w-full md:w-1/6 md:px-0 md:mt-8 mb-3 text-gray-800 leading-normal">
     <div class="flex-col justify-between items-center">
       <div class="flex flex-wrap">
           <div class="w-full py-3">
@@ -58,13 +58,13 @@
           </div>
       </div>
       <CustomerProjects {customerId}/>
-      <CreateProjects {customerId}/>
     </div>
   </div>
-  <div class="w-full md:w-2/4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+  <div class="w-full md:w-3/6 md:px-0 md:mt-8 mb-16 mx-3 text-gray-800 leading-normal">
     <svelte:component this={ProjectDedications} />
   </div>
-  <div class="w-full md:w-1/4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
-  <CreateDedication />
+  <div class="w-full md:w-2/6 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+    <CreateDedication />
+    <CreateProjects {customerId}/>
   </div>
 </div>

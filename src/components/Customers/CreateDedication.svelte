@@ -64,40 +64,42 @@
 		<div class="bg-white border rounded p-2">
 			<h3 class="pt-3 text-lg text-center font-semibold">Create Dedications</h3>
 			<form on:submit|preventDefault={submitForm} novalidate class="px-4 pt-3 pb-3 rounded">
-				<div class="mb-1">
-					<label class="block mb-2 text-sm font-bold text-gray-700" for="date">
-						Fecha
-					</label>
-					<input
-						class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-						id="nameproject"
-						type="date"
-						bind:value={dateDedication}
-					/>
-				</div>
-				<div class="mb-1">
-					<label class="block mb-2 text-sm font-bold text-gray-700" for="date">
-						Time
-					</label>
-					<input
-						class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-						id="nameproject"
-						type="time"
-						bind:value={timeDedication}
-					/>
-				</div>
-				<div class="mb-1">
-					<label class="block mb-2 text-sm font-bold text-gray-700" for="hours">
-					Hours
-					</label>
-					<input
-						class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-						id="hours"
-						type="number"
-						min="0"
-						bind:value={hoursDedication}
-						placeholder="Hours"
-					/>
+				<div class="md:flex">
+					<div class="md:w-2/3 px-1 mb-6 md:mb-0 mb-1">
+						<label class="block mb-2 text-sm font-bold text-gray-700" for="date">
+							Fecha
+						</label>
+						<input
+							class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+							id="nameproject"
+							type="date"
+							bind:value={dateDedication}
+						/>
+					</div>
+					<div class="md:w-1/3 px-1 mb-1">
+						<label class="block mb-2 text-sm font-bold text-gray-700" for="date">
+							Time
+						</label>
+						<input
+							class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+							id="nameproject"
+							type="time"
+							bind:value={timeDedication}
+						/>
+					</div>
+					<div class="md:w-1/3 px-1 mb-1">
+						<label class="block mb-2 text-sm font-bold text-gray-700" for="hours">
+						Hours
+						</label>
+						<input
+							class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+							id="hours"
+							type="number"
+							min="0"
+							bind:value={hoursDedication}
+							placeholder="Hours"
+						/>
+					</div>
 				</div>
 				<div class="mb-1">
 					<label class="block mb-2 text-sm font-bold text-gray-700" for="activity">
@@ -108,6 +110,7 @@
 						id="activity"
 						bind:value={activityDedication}
 						placeholder="Activity"
+						rows="4"
 					/>
 				</div>
 				<div class="mb-1">

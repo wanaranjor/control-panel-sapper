@@ -19,7 +19,7 @@
   >
     <div class="flex justify-between items-center">
       <a href="/" class="inline-block py-2 text-white text-xl font-bold"
-        >Wilson Naranjo</a
+        >Wilson Andrés Naranjo</a
       >
       <div
         class="inline-block cursor-pointer md:hidden">
